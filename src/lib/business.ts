@@ -33,12 +33,20 @@ export const business = {
   mapsQuery: "Sharda Hardware Bokaro Steel City",
 };
 
+import cementImg from "@/assets/products/cement.jpg";
+import steelImg from "@/assets/products/steel.jpg";
+import roofingImg from "@/assets/products/roofing.jpg";
+import pipesImg from "@/assets/products/pipes.jpg";
+import sandImg from "@/assets/products/sand.jpg";
+import toolsImg from "@/assets/products/tools.jpg";
+
 export type ProductCategory = {
   slug: string;
   name: string;
   nameHindi: string;
   description: string;
   icon: LucideIcon;
+  image: string;
   items: string[];
 };
 
