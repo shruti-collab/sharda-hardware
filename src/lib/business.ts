@@ -33,12 +33,20 @@ export const business = {
   mapsQuery: "Sharda Hardware Bokaro Steel City",
 };
 
+import cementImg from "@/assets/products/cement.jpg";
+import steelImg from "@/assets/products/steel.jpg";
+import roofingImg from "@/assets/products/roofing.jpg";
+import pipesImg from "@/assets/products/pipes.jpg";
+import sandImg from "@/assets/products/sand.jpg";
+import toolsImg from "@/assets/products/tools.jpg";
+
 export type ProductCategory = {
   slug: string;
   name: string;
   nameHindi: string;
   description: string;
   icon: LucideIcon;
+  image: string;
   items: string[];
 };
 
@@ -49,6 +57,7 @@ export const productCategories: ProductCategory[] = [
     nameHindi: "सीमेंट",
     description: "OPC & PPC cement from trusted Indian brands — ideal for foundations, columns and plaster work.",
     icon: Layers,
+    image: cementImg,
     items: ["UltraTech OPC 53", "ACC PPC", "Ambuja Plus", "Shree Cement", "Dalmia DSP"],
   },
   {
@@ -57,6 +66,7 @@ export const productCategories: ProductCategory[] = [
     nameHindi: "सरिया",
     description: "High-grade Fe500 & Fe550D TMT bars, angles and flats for reinforced concrete work.",
     icon: Boxes,
+    image: steelImg,
     items: ["TATA Tiscon 8mm–25mm", "SAIL TMT", "Kamdhenu", "MS Angles", "MS Flats"],
   },
   {
@@ -65,6 +75,7 @@ export const productCategories: ProductCategory[] = [
     nameHindi: "छत की चादर",
     description: "Colour-coated, galvanised and polycarbonate roofing sheets for homes, sheds and workshops.",
     icon: HomeIcon,
+    image: roofingImg,
     items: ["JSW Colour Coated", "TATA Shaktee GC", "Polycarbonate", "Ridge Caps", "Fasteners"],
   },
   {
@@ -73,6 +84,7 @@ export const productCategories: ProductCategory[] = [
     nameHindi: "पाइप",
     description: "PVC, CPVC and GI pipes with a full range of fittings for plumbing and water supply.",
     icon: Waves,
+    image: pipesImg,
     items: ["Supreme CPVC", "Astral Pipes", "Finolex PVC", "GI Pipes", "Elbows & Tees"],
   },
   {
@@ -81,6 +93,7 @@ export const productCategories: ProductCategory[] = [
     nameHindi: "बालू और गिट्टी",
     description: "Clean river sand, stone chips and bricks — delivered directly to your site in Bokaro.",
     icon: Layers,
+    image: sandImg,
     items: ["River Sand", "M-Sand", "10mm Chips", "20mm Chips", "Red Bricks"],
   },
   {
@@ -89,6 +102,7 @@ export const productCategories: ProductCategory[] = [
     nameHindi: "औज़ार",
     description: "Hand tools, power tools and general hardware for masons, carpenters and electricians.",
     icon: Wrench,
+    image: toolsImg,
     items: ["Trowels & Levels", "Drill Machines", "Grinders", "Nails & Screws", "Safety Gear"],
   },
 ];
