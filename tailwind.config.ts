@@ -57,14 +57,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-      },
-      fontFamily: {
-        sans: ['Mulish', 'system-ui', 'sans-serif'],
-        body: ['Mulish', 'system-ui', 'sans-serif'],
-        display: ['"Libre Baskerville"', 'Georgia', 'serif'],
-        hindi: ['Poppins', 'system-ui', 'sans-serif'],
-      },
-      colors: {
         ivory: "hsl(var(--ivory))",
         navy: "hsl(var(--navy))",
         brass: {
@@ -74,7 +66,13 @@ export default {
         ruby: "hsl(var(--ruby))",
         cement: "hsl(var(--cement))",
         sky: "hsl(var(--sky))",
-      } as any,
+      },
+      fontFamily: {
+        sans: ['Mulish', 'system-ui', 'sans-serif'],
+        body: ['Mulish', 'system-ui', 'sans-serif'],
+        display: ['"Libre Baskerville"', 'Georgia', 'serif'],
+        hindi: ['Poppins', 'system-ui', 'sans-serif'],
+      },
       letterSpacing: {
         tightest: '-0.03em',
         tighter: '-0.02em',
