@@ -1,122 +1,132 @@
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, TreePine } from "lucide-react";
-import heroImage from "@/assets/hero-camping.jpg";
-import forestImage from "@/assets/spot-forest.jpg";
-import lakeImage from "@/assets/spot-lake.jpg";
-import meadowImage from "@/assets/spot-meadow.jpg";
-
-const slides = [
-  { image: heroImage, alt: "Off-grid camping in nature" },
-  { image: forestImage, alt: "Forest camping spot" },
-  { image: lakeImage, alt: "Lakeside retreat" },
-  { image: meadowImage, alt: "Meadow camping experience" },
-];
-
-const SLIDE_DURATION = 5000;
+import { motion } from "framer-motion";
+import { ArrowRight, Phone, ShieldCheck, Truck, Star } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import heroImage from "@/assets/sharda-hero.jpg";
+import { business, waLink, telLink } from "@/lib/business";
 
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [progress, setProgress] = useState(0);
-
-  const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-    setProgress(0);
-  }, []);
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-    setProgress(0);
-  };
-
-  useEffect(() => {
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          nextSlide();
-          return 0;
-        }
-        return prev + (100 / (SLIDE_DURATION / 50));
-      });
-    }, 50);
-
-    return () => clearInterval(progressInterval);
-  }, [nextSlide]);
+  const [loaded, setLoaded] = useState(false);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
-      {/* Image Ticker */}
-      <AnimatePresence mode="popLayout">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute inset-0"
-        >
-          <img
-            src={slides[currentSlide].image}
-            alt={slides[currentSlide].alt}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Bottom-Left Text Content */}
-      <div className="absolute bottom-20 left-6 md:left-12 lg:left-16 z-10 text-white">
-        {/* Tree Icon */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="mb-4"
-        >
-          <TreePine className="w-6 h-6 text-white stroke-[1.5]" />
-        </motion.div>
-
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight max-w-md text-left flex flex-col"
-        >
-          <span>Disconnect</span>
-          <span>to Reconnect</span>
-        </motion.h1>
-
-        {/* CTA Button */}
-        <motion.button
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-          className="mt-6 flex items-center gap-3 bg-white text-foreground px-6 py-3 rounded-full text-sm tracking-wide hover:bg-white/90 transition-colors"
-        >
-          Book Now
-          <ArrowRight className="w-4 h-4" />
-        </motion.button>
-      </div>
-
-      {/* Progress Bars */}
-      <div className="absolute bottom-8 left-6 md:left-12 lg:left-16 right-6 md:right-12 lg:right-16 z-10 flex gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className="flex-1 h-[2px] bg-white/30 overflow-hidden cursor-pointer"
-            aria-label={`Go to slide ${index + 1}`}
+    <section className="relative overflow-hidden hero-bg-pattern">
+      <div className="container-shell grid gap-10 py-16 md:grid-cols-2 md:gap-8 md:py-24 lg:py-28">
+        {/* Left: text */}
+        <div className="flex flex-col justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-brass/40 bg-ivory/60 px-3 py-1 text-xs font-medium text-brass-dark"
           >
-            <div
-              className="h-full bg-white transition-all duration-100 ease-linear"
-              style={{
-                width: index === currentSlide ? `${progress}%` : index < currentSlide ? "100%" : "0%",
-              }}
+            <Star className="h-3.5 w-3.5 fill-brass text-brass" />
+            Trusted in Bokaro for {business.yearsInBusiness}+ years
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.05 }}
+            className="mt-5 font-display text-4xl leading-[1.05] text-navy sm:text-5xl lg:text-6xl"
+          >
+            Building Bokaro,
+            <br />
+            <span className="italic text-brass">brick by brick.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="mt-5 max-w-lg text-base leading-relaxed text-cement"
+          >
+            {business.name} supplies premium cement, TMT steel, roofing sheets, pipes, sand and tools —
+            everything you need to build a strong Indian home. Fair prices, honest advice.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            className="mt-3 font-hindi text-lg text-navy/70"
+          >
+            {business.taglineHindi}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-8 flex flex-wrap gap-3"
+          >
+            <Link
+              to="/products"
+              className="group inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-medium text-ivory shadow-soft transition-all hover:bg-navy/90 hover:shadow-elegant"
+            >
+              Browse Catalog
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <a
+              href={waLink("Namaste! I would like a quotation for construction materials.")}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-brass bg-ivory px-6 py-3 text-sm font-medium text-brass-dark transition-all hover:bg-brass hover:text-ivory"
+            >
+              WhatsApp Quote
+            </a>
+            <a
+              href={telLink()}
+              className="inline-flex items-center gap-2 rounded-full px-4 py-3 text-sm font-medium text-navy hover:text-brass-dark"
+            >
+              <Phone className="h-4 w-4" /> {business.phoneDisplay}
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mt-10 flex flex-wrap items-center gap-6 text-xs text-cement"
+          >
+            <span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-brass" /> Genuine brands only</span>
+            <span className="flex items-center gap-2"><Truck className="h-4 w-4 text-brass" /> Bokaro site delivery</span>
+            <span className="flex items-center gap-2"><Star className="h-4 w-4 text-brass" /> Contractor rates</span>
+          </motion.div>
+        </div>
+
+        {/* Right: hero image, fully visible */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="relative"
+        >
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl bg-muted shadow-elegant md:max-w-none">
+            {!loaded && (
+              <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-muted via-ivory to-muted" />
+            )}
+            <img
+              src={heroImage}
+              alt="Sharda Hardware storefront with cement bags and steel rods in Bokaro"
+              width={1280}
+              height={1600}
+              onLoad={() => setLoaded(true)}
+              className={`h-full w-full object-cover object-center transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}
             />
-          </button>
-        ))}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent" />
+          </div>
+
+          {/* Floating badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="absolute -bottom-4 -left-4 hidden rounded-xl border border-border bg-ivory p-4 shadow-soft md:block"
+          >
+            <div className="font-display text-2xl text-navy">{business.yearsInBusiness}+ yrs</div>
+            <div className="text-xs text-cement">serving Bokaro Steel City</div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
