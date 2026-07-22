@@ -70,6 +70,16 @@ export default {
         marigold: "hsl(var(--marigold))",
         saffron: "hsl(var(--saffron))",
         turmeric: "hsl(var(--turmeric))",
+        // Legacy aliases mapped onto the new Indian palette
+        navy: "hsl(var(--maroon))",
+        ivory: "hsl(var(--cream))",
+        cement: "hsl(var(--ink-soft))",
+        ruby: "hsl(var(--vermilion))",
+        sky: "hsl(var(--saffron))",
+        brass: {
+          DEFAULT: "hsl(var(--marigold))",
+          dark: "hsl(var(--saffron))",
+        },
       },
       fontFamily: {
         sans: ['Manrope', 'system-ui', 'sans-serif'],
