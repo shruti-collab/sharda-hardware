@@ -1,34 +1,57 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { productCategories, type ProductCategory } from "@/lib/business";
 
 const CategoryCard = ({ cat, index }: { cat: ProductCategory; index: number }) => {
   const Icon = cat.icon;
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-soft transition-all hover:-translate-y-1 hover:border-brass/60 hover:shadow-elegant"
+      transition={{ duration: 0.55, delay: index * 0.06, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brass/15 to-brass/5 text-brass-dark ring-1 ring-brass/20">
-        <Icon className="h-6 w-6" />
-      </div>
-      <div className="flex items-baseline justify-between gap-2">
-        <h3 className="font-display text-xl text-navy">{cat.name}</h3>
-        <span className="font-hindi text-sm text-brass">{cat.nameHindi}</span>
-      </div>
-      <p className="mt-2 text-sm leading-relaxed text-cement">{cat.description}</p>
-      <ul className="mt-4 flex flex-wrap gap-1.5">
-        {cat.items.slice(0, 4).map((it) => (
-          <li key={it} className="rounded-full bg-muted px-2.5 py-1 text-[11px] text-navy/80">
-            {it}
-          </li>
-        ))}
-      </ul>
-      <ArrowUpRight className="absolute right-5 top-5 h-4 w-4 text-cement opacity-0 transition-all group-hover:opacity-100" />
+      <Card className="group h-full overflow-hidden rounded-2xl border-maroon/10 bg-card shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-maroon/30 hover:shadow-elegant">
+        <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+          <img
+            src={cat.image}
+            alt={`${cat.name} available at Sharda Hardware, Bokaro`}
+            width={1200}
+            height={900}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-4">
+            <div className="flex items-center gap-2 text-cream">
+              <div className="grid h-9 w-9 place-items-center rounded-lg bg-cream/15 text-cream backdrop-blur-sm ring-1 ring-cream/25">
+                <Icon className="h-4.5 w-4.5" />
+              </div>
+              <span className="font-hindi text-lg drop-shadow">{cat.nameHindi}</span>
+            </div>
+            <ArrowUpRight className="h-5 w-5 text-cream/80 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </div>
+        </div>
+
+        <CardContent className="p-5">
+          <h3 className="font-display text-xl tracking-tight text-ink">{cat.name}</h3>
+          <p className="mt-2 text-sm leading-relaxed text-ink-soft">{cat.description}</p>
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {cat.items.slice(0, 4).map((it) => (
+              <Badge
+                key={it}
+                variant="secondary"
+                className="rounded-full border border-maroon/10 bg-muted text-[11px] font-medium text-ink/80 hover:bg-marigold/30"
+              >
+                {it}
+              </Badge>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
     </motion.div>
   );
 };
@@ -36,7 +59,7 @@ const CategoryCard = ({ cat, index }: { cat: ProductCategory; index: number }) =
 const ProductGrid = ({ compact = false }: { compact?: boolean }) => {
   const list = compact ? productCategories.slice(0, 6) : productCategories;
   return (
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {list.map((c, i) => (
         <CategoryCard key={c.slug} cat={c} index={i} />
       ))}
