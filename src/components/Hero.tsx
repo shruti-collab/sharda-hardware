@@ -113,21 +113,17 @@ const Hero = () => {
         >
           <div className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-marigold/25 via-transparent to-maroon/20 blur-2xl" />
           <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-[1.5rem] border border-maroon/15 bg-cream shadow-elegant md:max-w-none">
-            <div className="relative aspect-[3/4] w-full">
-              {!loaded && (
-                <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-muted via-cream to-muted" />
-              )}
-              <img
-                src={heroAsset.url}
-                alt="Sharda Hardware & Cement Agency — proprietor at the Bokaro storefront"
-                width={1280}
-                height={1700}
-                loading="eager"
-                decoding="async"
-                onLoad={() => setLoaded(true)}
-                className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}
-              />
-            </div>
+            {!loaded && (
+              <div className="aspect-[3/4] w-full animate-pulse bg-gradient-to-br from-muted via-cream to-muted" />
+            )}
+            <img
+              src={heroAsset.url}
+              alt="Sharda Hardware & Cement Agency — proprietor at the Bokaro storefront"
+              width={1280}
+              height={1700}
+              onLoad={() => setLoaded(true)}
+              className={`h-full w-full object-cover object-center transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}
+            />
           </div>
 
           <motion.div
