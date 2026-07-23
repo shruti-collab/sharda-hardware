@@ -46,13 +46,17 @@ const About = () => {
             <div className="relative">
               <div className="pointer-events-none absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-marigold/30 via-transparent to-maroon/20 blur-2xl" />
               <div className="relative overflow-hidden rounded-[1.25rem] border border-maroon/15 bg-cream shadow-elegant">
-                <img
-                  src={ownerPortrait}
-                  alt={`${business.owner}, proprietor of ${business.name}`}
-                  width={900}
-                  height={1100}
-                  className="h-full w-full object-cover"
-                />
+                <div className="relative aspect-[4/5] w-full">
+                  <img
+                    src={ownerPortrait}
+                    alt={`${business.owner}, proprietor of ${business.name}`}
+                    width={900}
+                    height={1125}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover object-center"
+                  />
+                </div>
               </div>
               <div className="absolute -bottom-4 left-4 rounded-xl border border-maroon/15 bg-cream/95 px-4 py-2 shadow-soft backdrop-blur">
                 <div className="font-display text-base text-maroon">{business.owner}</div>
