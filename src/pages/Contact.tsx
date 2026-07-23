@@ -1,4 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
+import SEO from "@/components/SEO";
 import EnquiryForm from "@/components/EnquiryForm";
 import { business, waLink, telLink } from "@/lib/business";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
@@ -19,6 +20,11 @@ const Contact = () => {
 
   return (
     <section className="py-16 sm:py-20">
+      <SEO
+        title="Contact Sharda Hardware — Bokaro Steel City | Call, WhatsApp, Visit"
+        description="Call +91 99391 59582 or visit us on Biada Road, Railway Colony, Bokaro Steel City. Open daily 8 AM – 9 PM."
+        path="/contact"
+      />
       <div className="container-shell">
         <SectionHeading
           eyebrow="Get in Touch"

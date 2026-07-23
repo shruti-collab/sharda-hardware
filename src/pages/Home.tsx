@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import ProductGrid from "@/components/ProductGrid";
 import SectionHeading from "@/components/SectionHeading";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, ShieldCheck, HandshakeIcon, Truck, IndianRupee } from "lucide-react";
@@ -18,6 +19,11 @@ const Home = () => {
 
   return (
     <>
+      <SEO
+        title="Sharda Hardware & Cement Agency — Bokaro Steel City"
+        description="Cement, TMT steel, roofing, pipes, sand and tools in Bokaro Steel City. Trusted hardware supplier for 5+ years."
+        path="/"
+      />
       <Hero />
 
       <section className="border-y border-border bg-ivory/60">

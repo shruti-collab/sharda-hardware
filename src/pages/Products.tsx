@@ -1,12 +1,34 @@
 import SectionHeading from "@/components/SectionHeading";
 import ProductGrid from "@/components/ProductGrid";
-import { waLink } from "@/lib/business";
+import SEO from "@/components/SEO";
+import { productCategories, waLink } from "@/lib/business";
 import { useLang } from "@/lib/i18n";
 
 const Products = () => {
   const { t, lang } = useLang();
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Sharda Hardware & Cement Agency — Product Catalog",
+    itemListElement: productCategories.map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Product",
+        name: c.name,
+        description: c.description,
+        category: c.name,
+      },
+    })),
+  };
   return (
     <section className="py-16 sm:py-20">
+      <SEO
+        title="Product Catalog — Cement, Steel, Pipes & Tools | Sharda Hardware"
+        description="Browse cement, TMT steel rods, roofing sheets, PVC/CPVC pipes, sand, aggregate and tools available at Sharda Hardware, Bokaro."
+        path="/products"
+        jsonLd={itemListJsonLd}
+      />
       <div className="container-shell">
         <SectionHeading
           eyebrow="Product Catalog"
