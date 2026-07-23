@@ -4,9 +4,11 @@ import { ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { productCategories, type ProductCategory } from "@/lib/business";
+import { useLang } from "@/lib/i18n";
 
 const CategoryCard = ({ cat, index }: { cat: ProductCategory; index: number }) => {
   const Icon = cat.icon;
+  const { lang } = useLang();
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -37,8 +39,8 @@ const CategoryCard = ({ cat, index }: { cat: ProductCategory; index: number }) =
         </div>
 
         <CardContent className="p-5">
-          <h3 className="font-display text-xl tracking-tight text-ink">{cat.name}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-ink-soft">{cat.description}</p>
+          <h3 className={`text-xl tracking-tight text-ink ${lang === "hi" ? "font-hindi" : "font-display"}`}>{lang === "hi" ? cat.nameHindi : cat.name}</h3>
+          <p className={`mt-2 text-sm leading-relaxed text-ink-soft ${lang === "hi" ? "font-hindi" : ""}`}>{lang === "hi" ? cat.descriptionHindi : cat.description}</p>
           <div className="mt-4 flex flex-wrap gap-1.5">
             {cat.items.slice(0, 4).map((it) => (
               <Badge
