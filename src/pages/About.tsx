@@ -4,9 +4,8 @@ import { business } from "@/lib/business";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import ownerPortraitAsset from "@/assets/owner-portrait.png.asset.json";
-const ownerPortrait = ownerPortraitAsset.url;
-import shopVideo from "@/assets/shop.mp4.asset.json";
+import ownerPortrait from "@/assets/owner-portrait.png";
+import shopVideoSrc from "@/assets/shop.mp4";
 import { useLang } from "@/lib/i18n";
 
 const About = () => {
