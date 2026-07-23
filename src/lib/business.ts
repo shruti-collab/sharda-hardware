@@ -46,6 +46,7 @@ export type ProductCategory = {
   name: string;
   nameHindi: string;
   description: string;
+  descriptionHindi: string;
   icon: LucideIcon;
   image: string;
   items: string[];
@@ -57,6 +58,7 @@ export const productCategories: ProductCategory[] = [
     name: "Cement",
     nameHindi: "सीमेंट",
     description: "OPC & PPC cement from trusted Indian brands — ideal for foundations, columns and plaster work.",
+    descriptionHindi: "भरोसेमंद भारतीय ब्रांडों की OPC और PPC सीमेंट — नींव, कॉलम और प्लास्टर के लिए बेहतरीन।",
     icon: Layers,
     image: cementImg,
     items: ["UltraTech OPC 53", "ACC PPC", "Ambuja Plus", "Shree Cement", "Dalmia DSP"],
@@ -66,6 +68,7 @@ export const productCategories: ProductCategory[] = [
     name: "Steel & TMT Rods",
     nameHindi: "सरिया",
     description: "High-grade Fe500 & Fe550D TMT bars, angles and flats for reinforced concrete work.",
+    descriptionHindi: "उच्च गुणवत्ता वाले Fe500 और Fe550D टीएमटी सरिया, एंगल और फ्लैट — मज़बूत निर्माण के लिए।",
     icon: Boxes,
     image: steelImg,
     items: ["TATA Tiscon 8mm–25mm", "SAIL TMT", "Kamdhenu", "MS Angles", "MS Flats"],
@@ -75,6 +78,7 @@ export const productCategories: ProductCategory[] = [
     name: "Roofing Sheets",
     nameHindi: "छत की चादर",
     description: "Colour-coated, galvanised and polycarbonate roofing sheets for homes, sheds and workshops.",
+    descriptionHindi: "रंगीन, गैल्वनाइज़्ड और पॉलीकार्बोनेट छत की चादरें — घर, शेड और वर्कशॉप के लिए।",
     icon: HomeIcon,
     image: roofingImg,
     items: ["JSW Colour Coated", "TATA Shaktee GC", "Polycarbonate", "Ridge Caps", "Fasteners"],
@@ -84,6 +88,7 @@ export const productCategories: ProductCategory[] = [
     name: "Pipes & Fittings",
     nameHindi: "पाइप",
     description: "PVC, CPVC and GI pipes with a full range of fittings for plumbing and water supply.",
+    descriptionHindi: "पीवीसी, सीपीवीसी और जीआई पाइप — प्लंबिंग और जल आपूर्ति के लिए पूरी रेंज।",
     icon: Waves,
     image: pipesImg,
     items: ["Supreme CPVC", "Astral Pipes", "Finolex PVC", "GI Pipes", "Elbows & Tees"],
@@ -93,6 +98,7 @@ export const productCategories: ProductCategory[] = [
     name: "Sand & Aggregate",
     nameHindi: "बालू और गिट्टी",
     description: "Clean river sand, stone chips and bricks — delivered directly to your site in Bokaro.",
+    descriptionHindi: "साफ नदी का बालू, गिट्टी और ईंट — सीधे आपके निर्माण स्थल तक पहुँचाया जाता है।",
     icon: Layers,
     image: sandImg,
     items: ["River Sand", "M-Sand", "10mm Chips", "20mm Chips", "Red Bricks"],
@@ -102,6 +108,7 @@ export const productCategories: ProductCategory[] = [
     name: "Tools & Hardware",
     nameHindi: "औज़ार",
     description: "Hand tools, power tools and general hardware for masons, carpenters and electricians.",
+    descriptionHindi: "मिस्त्री, बढ़ई और इलेक्ट्रीशियन के लिए हैंड टूल्स, पावर टूल्स और सामान्य हार्डवेयर।",
     icon: Wrench,
     image: toolsImg,
     items: ["Trowels & Levels", "Drill Machines", "Grinders", "Nails & Screws", "Safety Gear"],
