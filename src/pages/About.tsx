@@ -4,7 +4,8 @@ import { business } from "@/lib/business";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import ownerPortrait from "@/assets/owner-portrait.png";
+import ownerPortraitAsset from "@/assets/owner-portrait.png.asset.json";
+const ownerPortrait = ownerPortraitAsset.url;
 import shopVideo from "@/assets/shop.mp4.asset.json";
 import { useLang } from "@/lib/i18n";
 
@@ -45,13 +46,17 @@ const About = () => {
             <div className="relative">
               <div className="pointer-events-none absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-marigold/30 via-transparent to-maroon/20 blur-2xl" />
               <div className="relative overflow-hidden rounded-[1.25rem] border border-maroon/15 bg-cream shadow-elegant">
-                <img
-                  src={ownerPortrait}
-                  alt={`${business.owner}, proprietor of ${business.name}`}
-                  width={900}
-                  height={1100}
-                  className="h-full w-full object-cover"
-                />
+                <div className="relative aspect-[4/5] w-full">
+                  <img
+                    src={ownerPortrait}
+                    alt={`${business.owner}, proprietor of ${business.name}`}
+                    width={900}
+                    height={1125}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover object-center"
+                  />
+                </div>
               </div>
               <div className="absolute -bottom-4 left-4 rounded-xl border border-maroon/15 bg-cream/95 px-4 py-2 shadow-soft backdrop-blur">
                 <div className="font-display text-base text-maroon">{business.owner}</div>
@@ -144,17 +149,19 @@ const About = () => {
           <div className="relative mx-auto mt-8 max-w-4xl">
             <div className="pointer-events-none absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-marigold/25 via-transparent to-maroon/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-[1.25rem] border border-maroon/15 bg-cream shadow-elegant">
-              <video
-                src={shopVideo.url}
-                className="h-full w-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-                preload="metadata"
-                aria-label={t("Video tour of Sharda Hardware shop", "शारदा हार्डवेयर की दुकान का वीडियो")}
-              />
+              <div className="relative aspect-video w-full">
+                <video
+                  src={shopVideo.url}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="metadata"
+                  aria-label={t("Video tour of Sharda Hardware shop", "शारदा हार्डवेयर की दुकान का वीडियो")}
+                />
+              </div>
             </div>
           </div>
         </motion.div>
