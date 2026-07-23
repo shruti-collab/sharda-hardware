@@ -1,67 +1,73 @@
-# Sharda Hardware & Cement Agency — Bokaro
+# Welcome to your Lovable project
 
-A modern, bilingual (English / Hindi) React + Vite website for **Sharda Hardware & Cement Agency**, Biada Road, Railway Colony, Bokaro Steel City, Jharkhand 827001.
+## Project info
 
-## Features
+**URL**: https://lovable.dev/projects/1e49eeda-b375-49ea-be21-892412c77e87
 
-- Product catalog (Cement, Steel, Roofing, Pipes, Sand, Tools)
-- Bilingual EN / हिन्दी language toggle
-- WhatsApp direct chat integration
-- Enquiry form (mailto + WhatsApp fallback)
-- SEO-ready metadata, JSON-LD structured data, sitemap, robots.txt
-- Responsive design with Indian-inspired color palette
+## How can I edit this code?
 
-## Tech stack
+There are several ways of editing your application.
 
-- Vite 5
-- React 18 + TypeScript
-- react-router-dom
-- shadcn/ui + Tailwind CSS
-- Framer Motion
-- react-helmet-async
+**Use Lovable**
 
-## Local development
+Simply visit the [Lovable Project](https://lovable.dev/projects/1e49eeda-b375-49ea-be21-892412c77e87) and start prompting.
+
+Changes made via Lovable will be committed automatically to this repo.
+
+**Use your preferred IDE**
+
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
 
 ```sh
-npm install
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-## Build
+**Edit a file directly in GitHub**
 
-```sh
-npm run build
-```
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-Output is written to `dist/`.
+**Use GitHub Codespaces**
 
-## Deploy to Vercel
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-1. Push this repo to GitHub (`shruti-collab/ShardaHardware`).
-2. Import the repo on [Vercel](https://vercel.com/new).
-3. Vercel will auto-detect **Vite** and use:
-   - Build command: `npm run build`
-   - Output directory: `dist`
-4. Add these environment variables in Vercel → Project → Settings → Environment Variables:
+## What technologies are used for this project?
 
-   | Variable | Value |
-   |---|---|
-   | `VITE_SUPABASE_URL` | `https://seeukuensorhofcszlou.supabase.co` |
-   | `VITE_SUPABASE_PUBLISHABLE_KEY` | `sb_publishable_H8DsOKcwHfOD-YfTv90N9A_W0fZlzL_` |
-   | `VITE_SUPABASE_PROJECT_ID` | `seeukuensorhofcszlou` |
+This project is built with:
 
-5. Click **Deploy**.
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-> `vercel.json` is already included for SPA routing and long-term asset caching.
+## How can I deploy this project?
 
-## Connect custom domain
+Simply open [Lovable](https://lovable.dev/projects/1e49eeda-b375-49ea-be21-892412c77e87) and click on Share -> Publish.
 
-After deploying on Vercel:
-1. Go to Project → Settings → Domains.
-2. Add `shardahardwarebokaro.in`.
-3. Update DNS at MumuHost with the records Vercel provides (A + CNAME).
+## Can I connect a custom domain to my Lovable project?
 
-## Contact
+Yes, you can!
 
-- Phone / WhatsApp: [+91 99391 59582](https://wa.me/919939159582)
-- Address: Sharda Hardware and Cement Agency near Sharda Jewellers, Biada Road, Railway Colony, Bokaro Steel City, Jharkhand 827001
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

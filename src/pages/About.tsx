@@ -143,27 +143,20 @@ const About = () => {
 
           <div className="relative mx-auto mt-8 max-w-4xl">
             <div className="pointer-events-none absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-marigold/25 via-transparent to-maroon/20 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[1.25rem] border border-maroon/15 bg-ink shadow-elegant">
+            <div className="relative overflow-hidden rounded-[1.25rem] border border-maroon/15 bg-cream shadow-elegant">
               <video
-                key={shopVideo.url}
-                className="block h-auto max-h-[70vh] w-full bg-ink object-contain"
+                src={shopVideo.url}
+                className="h-full w-full object-cover"
                 autoPlay
                 muted
                 loop
                 playsInline
                 controls
-                preload="auto"
-                poster={ownerPortrait}
+                preload="metadata"
                 aria-label={t("Video tour of Sharda Hardware shop", "शारदा हार्डवेयर की दुकान का वीडियो")}
-              >
-                <source src={shopVideo.url} type="video/mp4" />
-                <a href={shopVideo.url} className="p-4 text-cream underline">
-                  {t("Watch the shop tour video", "दुकान का वीडियो देखें")}
-                </a>
-              </video>
+              />
             </div>
           </div>
-
         </motion.div>
       </div>
     </section>
