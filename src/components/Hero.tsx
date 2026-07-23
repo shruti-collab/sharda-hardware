@@ -31,7 +31,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.05 }}
-            className={`mt-6 text-[2.75rem] font-500 leading-[1.02] tracking-tightest text-ink sm:text-5xl lg:text-[4.25rem] ${lang === "hi" ? "font-hindi" : "font-display"}`}
+            className={`mt-6 text-[2.75rem] font-medium leading-[1.02] tracking-tightest text-ink sm:text-5xl lg:text-[4.25rem] ${lang === "hi" ? "font-hindi" : "font-display"}`}
           >
             {lang === "en" ? (
               <>
