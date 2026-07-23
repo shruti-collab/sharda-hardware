@@ -1,0 +1,10 @@
+# Sharda Hardware & Cement Agency
+
+> Family-run hardware and construction materials supplier in Bokaro Steel City, Jharkhand — cement, TMT steel, roofing, pipes, sand and tools.
+
+## Pages
+
+- [Home](/): Overview of the shop, highlights, and product catalog.
+- [Products](/products): Full catalog — cement, steel & TMT rods, roofing sheets, pipes & fittings, sand & aggregate, tools & hardware.
+- [About](/about): Our story, values, and a look inside the shop.
+- [Contact](/contact): Address, phone, WhatsApp, hours, map, and enquiry form.
