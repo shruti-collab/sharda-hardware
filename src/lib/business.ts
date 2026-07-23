@@ -46,6 +46,7 @@ export type ProductCategory = {
   name: string;
   nameHindi: string;
   description: string;
+  descriptionHindi: string;
   icon: LucideIcon;
   image: string;
   items: string[];
