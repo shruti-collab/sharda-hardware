@@ -1,4 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
+import SEO from "@/components/SEO";
 import { business } from "@/lib/business";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
@@ -19,6 +20,11 @@ const About = () => {
 
   return (
     <section className="py-16 sm:py-20">
+      <SEO
+        title="About Sharda Hardware — A family shop built on trust in Bokaro"
+        description="Founded by Birendra Gupta, Sharda Hardware has served Bokaro Steel City's builders and homeowners for over 5 years with honest materials at honest prices."
+        path="/about"
+      />
       <div className="container-shell">
         <SectionHeading
           eyebrow="Our Story"
