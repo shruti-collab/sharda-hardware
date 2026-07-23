@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   const mapsSrc = `https://www.google.com/maps?q=${encodeURIComponent(
-    `${business.address.line1}, ${business.address.city}, ${business.address.state}`
+    business.mapsEmbedQuery
   )}&output=embed`;
 
   return (
@@ -30,7 +30,7 @@ const Contact = () => {
               { icon: Phone, label: "Call", value: business.phoneDisplay, href: telLink() },
               { icon: MessageCircle, label: "WhatsApp", value: business.phoneDisplay, href: waLink() },
               { icon: Mail, label: "Email", value: business.email, href: `mailto:${business.email}` },
-              { icon: Clock, label: "Hours", value: `Mon–Sat ${business.hours.weekdays} · Sun ${business.hours.sunday}` },
+              { icon: Clock, label: "Hours", value: `Open daily · ${business.hours.weekdays}` },
             ].map((c) => (
               <a
                 key={c.label}
