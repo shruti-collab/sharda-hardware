@@ -15,22 +15,23 @@ export const business = {
   taglineHindi: "हर घर की नींव, हमारे साथ।",
   owner: "Birendra Gupta",
   yearsInBusiness: 5,
-  phone: "+919876543210",
-  phoneDisplay: "+91 98765 43210",
-  whatsapp: "919876543210",
+  phone: "+919939159582",
+  phoneDisplay: "+91 99391 59582",
+  whatsapp: "919939159582",
   email: "shardahardware.bokaro@gmail.com",
   address: {
-    line1: "Main Road, Sector 4",
-    city: "Bokaro Steel City",
+    line1: "Near Sharda Jewellers, M37G+9HM, Biada Road",
+    city: "Railway Colony, Bokaro Steel City",
     state: "Jharkhand",
-    pincode: "827004",
+    pincode: "827001",
     country: "India",
   },
   hours: {
-    weekdays: "8:00 AM – 8:00 PM",
-    sunday: "9:00 AM – 2:00 PM",
+    weekdays: "8:00 AM – 9:00 PM",
+    sunday: "8:00 AM – 9:00 PM",
   },
-  mapsQuery: "Sharda Hardware Bokaro Steel City",
+  mapsUrl: "https://www.google.com/maps/place/M37G%2B9HM+%E0%A4%B6%E0%A4%BE%E0%A4%B0%E0%A4%A6%E0%A4%BE+%E0%A4%B9%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A1%E0%A4%B5%E0%A5%87%E0%A4%AF%E0%A4%B0+%E0%A4%8F%E0%A4%A3%E0%A5%8D%E0%A4%A1+%E0%A4%B8%E0%A4%BF%E0%A4%AE%E0%A5%87%E0%A4%82%E0%A4%9F+%E0%A4%8F%E0%A4%9C%E0%A5%87%E0%A4%82%E0%A4%B8%E0%A5%80,+Biada+Road,+Railway+Colony,+Bokaro+Steel+City,+Bokaro,+Jharkhand+827001",
+  mapsEmbedQuery: "M37G+9HM Sharda Hardware and Cement Agency, Biada Road, Railway Colony, Bokaro Steel City, Jharkhand 827001",
 };
 
 import cementImg from "@/assets/products/cement.jpg";
