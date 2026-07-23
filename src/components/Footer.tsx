@@ -45,8 +45,7 @@ const Footer = () => {
         <div>
           <h4 className="font-display text-sm uppercase tracking-wider text-brass">Store Hours</h4>
           <ul className="mt-4 space-y-2 text-sm">
-            <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-brass" /> Mon – Sat: {business.hours.weekdays}</li>
-            <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-brass" /> Sunday: {business.hours.sunday}</li>
+            <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-brass" /> Open daily: {business.hours.weekdays}</li>
           </ul>
         </div>
       </div>
