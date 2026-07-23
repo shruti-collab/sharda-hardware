@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import ownerPortrait from "@/assets/owner-portrait.png";
+import shopVideo from "@/assets/shop.mp4.asset.json";
 import { useLang } from "@/lib/i18n";
 
 const About = () => {
@@ -111,6 +112,46 @@ const About = () => {
             </Card>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-20"
+        >
+          <div className="mx-auto max-w-3xl text-center">
+            <div className={`text-xs uppercase tracking-[0.2em] text-marigold ${lang === "hi" ? "font-hindi normal-case tracking-normal" : ""}`}>
+              {t("Step inside", "दुकान की झलक")}
+            </div>
+            <h3 className={`mt-3 text-3xl text-maroon sm:text-4xl ${lang === "hi" ? "font-hindi" : "font-display"}`}>
+              {t("A look inside our shop", "हमारी दुकान का एक नज़ारा")}
+            </h3>
+            <p className={`mt-3 text-[15px] text-ink-soft ${lang === "hi" ? "font-hindi" : ""}`}>
+              {t(
+                "The shelves, the sacks of cement, the everyday rhythm of a family shop in Bokaro.",
+                "अलमारियाँ, सीमेंट की बोरियाँ, और बोकारो की एक पारिवारिक दुकान की रोज़मर्रा की चहल-पहल।",
+              )}
+            </p>
+          </div>
+
+          <div className="relative mx-auto mt-8 max-w-4xl">
+            <div className="pointer-events-none absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-marigold/25 via-transparent to-maroon/20 blur-2xl" />
+            <div className="relative overflow-hidden rounded-[1.25rem] border border-maroon/15 bg-cream shadow-elegant">
+              <video
+                src={shopVideo.url}
+                className="h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                preload="metadata"
+                aria-label={t("Video tour of Sharda Hardware shop", "शारदा हार्डवेयर की दुकान का वीडियो")}
+              />
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
