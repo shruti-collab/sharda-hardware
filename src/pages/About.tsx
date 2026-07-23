@@ -149,17 +149,19 @@ const About = () => {
           <div className="relative mx-auto mt-8 max-w-4xl">
             <div className="pointer-events-none absolute -inset-3 rounded-[1.75rem] bg-gradient-to-br from-marigold/25 via-transparent to-maroon/20 blur-2xl" />
             <div className="relative overflow-hidden rounded-[1.25rem] border border-maroon/15 bg-cream shadow-elegant">
-              <video
-                src={shopVideo.url}
-                className="h-full w-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-                preload="metadata"
-                aria-label={t("Video tour of Sharda Hardware shop", "शारदा हार्डवेयर की दुकान का वीडियो")}
-              />
+              <div className="relative aspect-video w-full">
+                <video
+                  src={shopVideo.url}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="metadata"
+                  aria-label={t("Video tour of Sharda Hardware shop", "शारदा हार्डवेयर की दुकान का वीडियो")}
+                />
+              </div>
             </div>
           </div>
         </motion.div>
