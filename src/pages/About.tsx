@@ -150,7 +150,7 @@ const About = () => {
             <div className="relative overflow-hidden rounded-[1.25rem] border border-maroon/15 bg-cream shadow-elegant">
               <div className="relative aspect-video w-full">
                 <video
-                  src={shopVideo.url}
+                  src={shopVideoSrc}
                   className="absolute inset-0 h-full w-full object-cover"
                   autoPlay
                   muted
