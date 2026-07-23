@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Phone, ShieldCheck, Truck, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import heroAsset from "@/assets/sharda-hero.png.asset.json";
+import heroAsset from "@/assets/sharda-hero.png";
 import { Button } from "@/components/ui/button";
 import { business, waLink, telLink } from "@/lib/business";
 import { useLang } from "@/lib/i18n";
@@ -117,7 +117,7 @@ const Hero = () => {
               <div className="aspect-[3/4] w-full animate-pulse bg-gradient-to-br from-muted via-cream to-muted" />
             )}
             <img
-              src={heroAsset.url}
+              src={heroAsset}
               alt="Sharda Hardware & Cement Agency — proprietor at the Bokaro storefront"
               width={1280}
               height={1700}
