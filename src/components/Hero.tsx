@@ -15,7 +15,7 @@ const Hero = () => {
     <section className="relative overflow-hidden hero-bg-pattern">
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-saffron via-cream to-maroon" />
 
-      <div className="container-shell grid gap-10 py-16 md:grid-cols-[1.05fr_1fr] md:gap-12 md:py-24 lg:py-28">
+      <div className="container-shell grid items-center gap-10 py-16 md:grid-cols-[1.1fr_0.9fr] md:gap-12 md:py-24 lg:py-28">
         <div className="flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
