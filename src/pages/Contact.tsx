@@ -1,4 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
+import EnquiryForm from "@/components/EnquiryForm";
 import { business, waLink, telLink } from "@/lib/business";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
@@ -71,6 +72,10 @@ const Contact = () => {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </motion.div>
+        </div>
+
+        <div className="mt-12">
+          <EnquiryForm />
         </div>
       </div>
     </section>
