@@ -34,12 +34,18 @@ export const business = {
   mapsEmbedQuery: "M37G+9HM Sharda Hardware and Cement Agency, Biada Road, Railway Colony, Bokaro Steel City, Jharkhand 827001",
 };
 
-import cementImg from "@/assets/products/cement.jpg";
-import steelImg from "@/assets/products/steel.jpg";
-import roofingImg from "@/assets/products/roofing.jpg";
-import pipesImg from "@/assets/products/pipes.jpg";
-import sandImg from "@/assets/products/sand.jpg";
-import toolsImg from "@/assets/products/tools.jpg";
+import cementAsset from "@/assets/products/cement.jpg.asset.json";
+import steelAsset from "@/assets/products/steel.jpg.asset.json";
+import roofingAsset from "@/assets/products/roofing.jpg.asset.json";
+import pipesAsset from "@/assets/products/pipes.jpg.asset.json";
+import sandAsset from "@/assets/products/sand.jpg.asset.json";
+import toolsAsset from "@/assets/products/tools.jpg.asset.json";
+const cementImg = cementAsset.url;
+const steelImg = steelAsset.url;
+const roofingImg = roofingAsset.url;
+const pipesImg = pipesAsset.url;
+const sandImg = sandAsset.url;
+const toolsImg = toolsAsset.url;
 
 export type ProductCategory = {
   slug: string;
